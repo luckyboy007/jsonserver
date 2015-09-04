@@ -33,11 +33,12 @@ def load_cfg(cfg_file):
   return cfg_ds
 
 def main(args):
+  cfg_file = None
   if len(args) != 2:
-    print 'ERROR: Did not provide config file'
-    return 1
+    cfg_file = 'cfg.ini'
+  else:
+    cfg_file = args[1]
 
-  cfg_file = args[1]
   if not os.path.exists(cfg_file):
     print 'ERROR: Config file %s does not exist' % cfg_file
     return 1
